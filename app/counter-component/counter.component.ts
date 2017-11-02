@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnChanges, SimpleChange, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from "@angular/core";
+
 
 @Component({
     moduleId: module.id,
@@ -6,7 +7,7 @@ import { Component, Input } from "@angular/core";
     templateUrl: "counter.component.html",
     inputs: ["name"]
 })
-export class CounterComponent {
+export class CounterComponent implements OnChanges {
     name: string = "default name";
 
     @Input("value")
@@ -17,6 +18,55 @@ export class CounterComponent {
 
     increment() {
         this.counterValue += this.counterStep;
+    }
+
+   // Срабатывает, когда Angular устанавливает значение для input свойства. 
+    // Метод может получать объект типа SimpleChange с информацией о новом и старом значениях.
+    // Срабатывает до ngOnInit и каждый раз, когда меняется значение input свойства.
+    ngOnChanges() {
+        console.log("ngOnChanges");
+    }
+
+    // Инициализация angular компонента или директивы. Вызывается один раз после того как компонент отобразится.
+    ngOnInit() {
+        console.log("ngOnInit");
+    }
+
+    // Срабатывает при каждой проверке изменений. Срабатывает часто.
+    ngDoCheck() {
+        console.log("ngDoCheck");
+    }
+
+    // Срабатывает после того как Angular внедряет внешнее содержимое в представление компонента.
+    // Используется только при работе с компонентами.
+    ngAfterContentInit() {
+        console.log("ngAfterContentInit");
+    }
+
+    // Срабатывает после каждой проверки внедренного контента в представление компонента
+    // срабатывает после ngAfterContentInit и после каждого ngDoCheck
+    // Используется только при работе с компонентами.
+    ngAfterContentChecked() {
+        console.log("ngAfterContentChecked");
+    }
+
+    // Срабатывает после инициализации представления компонента и дочерних компонентов.
+    // Запускается один раз после ngAfterContentChecked
+    // Используется только при работе с компонентами.
+    ngAfterViewInit() {
+        console.log("ngAfterViewInit");
+    }
+
+    // Срабатывает после того как Angular проверит представление компонента и все дочерние компоненты
+    // Запускается после ngAfterViewInit и после каждого ngAfterContentChecked
+    // Используется только при работе с компонентами.
+    ngAfterViewChecked() {
+        console.log("ngAfterViewChecked");
+    }
+
+    // Срабатывает сразу после уничтожения компонента или директивы
+    ngOnDestroy() {
+        console.log("ngOnDestroy");
     }
 
 }

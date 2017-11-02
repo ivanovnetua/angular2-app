@@ -19,6 +19,47 @@ var CounterComponent = /** @class */ (function () {
     CounterComponent.prototype.increment = function () {
         this.counterValue += this.counterStep;
     };
+    // Срабатывает, когда Angular устанавливает значение для input свойства. 
+    // Метод может получать объект типа SimpleChange с информацией о новом и старом значениях.
+    // Срабатывает до ngOnInit и каждый раз, когда меняется значение input свойства.
+    CounterComponent.prototype.ngOnChanges = function () {
+        console.log("ngOnChanges");
+    };
+    // Инициализация angular компонента или директивы. Вызывается один раз после того как компонент отобразится.
+    CounterComponent.prototype.ngOnInit = function () {
+        console.log("ngOnInit");
+    };
+    // Срабатывает при каждой проверке изменений. Срабатывает часто.
+    CounterComponent.prototype.ngDoCheck = function () {
+        console.log("ngDoCheck");
+    };
+    // Срабатывает после того как Angular внедряет внешнее содержимое в представление компонента.
+    // Используется только при работе с компонентами.
+    CounterComponent.prototype.ngAfterContentInit = function () {
+        console.log("ngAfterContentInit");
+    };
+    // Срабатывает после каждой проверки внедренного контента в представление компонента
+    // срабатывает после ngAfterContentInit и после каждого ngDoCheck
+    // Используется только при работе с компонентами.
+    CounterComponent.prototype.ngAfterContentChecked = function () {
+        console.log("ngAfterContentChecked");
+    };
+    // Срабатывает после инициализации представления компонента и дочерних компонентов.
+    // Запускается один раз после ngAfterContentChecked
+    // Используется только при работе с компонентами.
+    CounterComponent.prototype.ngAfterViewInit = function () {
+        console.log("ngAfterViewInit");
+    };
+    // Срабатывает после того как Angular проверит представление компонента и все дочерние компоненты
+    // Запускается после ngAfterViewInit и после каждого ngAfterContentChecked
+    // Используется только при работе с компонентами.
+    CounterComponent.prototype.ngAfterViewChecked = function () {
+        console.log("ngAfterViewChecked");
+    };
+    // Срабатывает сразу после уничтожения компонента или директивы
+    CounterComponent.prototype.ngOnDestroy = function () {
+        console.log("ngOnDestroy");
+    };
     __decorate([
         core_1.Input("value"),
         __metadata("design:type", Number)
