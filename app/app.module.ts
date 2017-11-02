@@ -4,16 +4,15 @@ import { AppComponent } from "./app.component";
 import { HelloWorldComponent } from "./hello-world-list/hello-world-list.component";
 import { RouterModule } from "@angular/router";
 import { ListsModule, routs } from "./list-components/index";
-import { CounterModule } from "./counter-component/counter.module";
+import { CounterComponent } from "./counter-component/counter.component";
 
 @NgModule({
     imports: [
         BrowserModule,
         ListsModule,
-        CounterModule,
         RouterModule.forRoot(routs)
     ],
-    declarations: [AppComponent, HelloWorldComponent],
+    declarations: [AppComponent, HelloWorldComponent, CounterComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {

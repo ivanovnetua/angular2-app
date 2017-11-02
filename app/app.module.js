@@ -12,7 +12,7 @@ var app_component_1 = require("./app.component");
 var hello_world_list_component_1 = require("./hello-world-list/hello-world-list.component");
 var router_1 = require("@angular/router");
 var index_1 = require("./list-components/index");
-var counter_module_1 = require("./counter-component/counter.module");
+var counter_component_1 = require("./counter-component/counter.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -21,10 +21,9 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 index_1.ListsModule,
-                counter_module_1.CounterModule,
                 router_1.RouterModule.forRoot(index_1.routs)
             ],
-            declarations: [app_component_1.AppComponent, hello_world_list_component_1.HelloWorldComponent],
+            declarations: [app_component_1.AppComponent, hello_world_list_component_1.HelloWorldComponent, counter_component_1.CounterComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
