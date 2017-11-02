@@ -10,6 +10,9 @@ var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
+    AppComponent.prototype.tickHandler = function (value) {
+        console.log("Time: " + value + "s");
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: "my-app",

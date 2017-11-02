@@ -13,6 +13,7 @@ var hello_world_list_component_1 = require("./hello-world-list/hello-world-list.
 var router_1 = require("@angular/router");
 var index_1 = require("./list-components/index");
 var counter_component_1 = require("./counter-component/counter.component");
+var timer_component_1 = require("./timer-component/timer.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -23,7 +24,7 @@ var AppModule = /** @class */ (function () {
                 index_1.ListsModule,
                 router_1.RouterModule.forRoot(index_1.routs)
             ],
-            declarations: [app_component_1.AppComponent, hello_world_list_component_1.HelloWorldComponent, counter_component_1.CounterComponent],
+            declarations: [app_component_1.AppComponent, hello_world_list_component_1.HelloWorldComponent, counter_component_1.CounterComponent, timer_component_1.TimerComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

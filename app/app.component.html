@@ -9,10 +9,19 @@
     <div>
         <router-outlet></router-outlet>
     </div>
+
     <hr>
 
     <div>
         <counter></counter>
         <counter [name]="'First counter'" [step]="2"></counter>
     </div>
+
+    <hr>
+
+    <div>
+        <timer (tick)="tickHandler($event)"></timer>
+    </div>
+
+
 </div>
